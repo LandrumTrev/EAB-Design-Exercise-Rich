@@ -1,3 +1,15 @@
 /* EAB Web Designer interview test */
 /* search landing page */
 
+/* dev styles */
+
+body {
+  background: gray;
+}
+
+.container-fluid {
+  background: aliceblue;
+  height: 100vh;
+}
+
+/* production styles */
