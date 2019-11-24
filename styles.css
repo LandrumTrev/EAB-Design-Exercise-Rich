@@ -4,12 +4,74 @@
 /* dev styles */
 
 body {
-  background: gray;
+  /* background: gray; */
 }
 
-.container-fluid {
+/* .container-fluid {
   background: aliceblue;
   height: 100vh;
+} */
+
+header {
 }
 
-/* production styles */
+main {
+  /* background: #397aba; */
+  /* height: 200px; */
+}
+
+aside {
+  /* background: #fdc846; */
+  /* height: 200px; */
+}
+
+footer {
+  /* background: #093550; */
+  /* height: 200px; */
+}
+
+/* production styles (xs breakpoints : mobile-first) */
+
+.head-photo {
+  background-image: url("./images/q_students.jpg");
+  background-size: cover;
+  min-height: 50vmin;
+}
+
+/* media queries for Bootstrap and larger breakpoints */
+
+@media screen and (min-width: 576px) {
+  .head-photo {
+    min-height: 55vmin;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .head-photo {
+    min-height: 60vmin;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .head-photo {
+    min-height: 65vmin;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .head-photo {
+    min-height: 70vmin;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .head-photo {
+    min-height: 75vmin;
+  }
+}
+
+@media screen and (min-width: 2200px) {
+  .head-photo {
+    min-height: 80vmin;
+  }
+}
