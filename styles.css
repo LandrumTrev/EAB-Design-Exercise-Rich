@@ -87,6 +87,10 @@ main {
   color: #fff;
 }
 
+.info-copy span {
+  font-weight: 500;
+}
+
 label {
   color: #a9bac6;
   font-variant: small-caps;
