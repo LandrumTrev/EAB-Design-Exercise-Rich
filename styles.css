@@ -24,9 +24,9 @@ p {
 /* header photo and logo */
 
 #head-logo {
-  width: 50%;
+  width: 55%;
   right: 3%;
-  top: 3%;
+  top: 2%;
   position: absolute;
 }
 
@@ -204,6 +204,9 @@ footer {
   .greeting {
     padding: 50px 35px 30px;
   }
+  #head-logo {
+    width: 50%;
+  }  
 }
 
 /* md */
@@ -274,7 +277,7 @@ footer {
 
 @media screen and (min-width: 1600px) {
   .head-photo {
-    min-height: 75vmin;
+    min-height: 85vmin;
   }
   section {
     min-height: 600px;
@@ -286,7 +289,7 @@ footer {
 
 @media screen and (min-width: 2200px) {
   .head-photo {
-    min-height: 80vmin;
+    min-height: 85vmin;
   }
   section {
     min-height: 750px;
