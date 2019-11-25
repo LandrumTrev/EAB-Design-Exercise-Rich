@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Rich Trevillian 2019-11-24 -->
+    <!-- EAB Web Designer interview test -->
+    <!-- search landing page -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -71,7 +74,7 @@
     <aside id="mobile-hockey-photo"></aside>
 
     <section class="container-fluid" id="hockey-section">
-      <div class="container info">
+      <div class="container hockey">
         <div class="row">
           <div class="hockey-block col col-12 col-md-8">
             <h1 class="hockey-headline">Go Bobcats!</h1>
@@ -82,7 +85,19 @@
       </div>
     </section>
 
-    <footer class="container-fluid"></footer>
+    <footer class="container-fluid">
+      <div class="container footer">
+        <div class="row">
+          <div class="footer-block col col-12">
+            <h1 class="footer-headline">In the meantime, find out more about Quinnipiac:</h1>
+            <p class="footer-copy">You'll have all the help you need <a href="#" id="financial-aid">navigating the financial aid process</a>.</p>
+            <p class="footer-copy">You'll find many ways to <a href="#" id="get-involved">get involved right away</a> during freshman year.</p>
+            <p class="footer-copy"><a href="#" id="rocky-top">The Rocky Top Student Center</a> has something for everyone ... and it's really cool-looking!</p>
+            <p class="footer-copy">With <a href="#" id="53-undergrads">53 undergraduate majors</a> to choose from, you're bound to find your fit.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Bootstrap CDN JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -99,17 +114,39 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- FPO JS -->
+    <!-- jQuery dummy alerts for link clicks -->
     <script>
       // jquery script container
       $(document).ready(function() {
         // Confirm/Update Info button FPO
         $("#info-button").click(function(event) {
           alert("Thanks!\nNow scroll down and get those free hockey tickets!\nSee ya soon!");
+          event.preventDefault();
         });
         // Get Free Hockey Tickets button FPO
         $("#hockey-button").click(function(event) {
           alert("Go Bobcats!\nWe'll see you on the ice!");
+          event.preventDefault();
+        });
+        // navigating financial aid LINK
+        $("#financial-aid").click(function(event) {
+          alert("you selected: Navigating financial aid");
+          event.preventDefault();
+        });
+        // get involved right away LINK
+        $("#get-involved").click(function(event) {
+          alert("you selected: get involved right away");
+          event.preventDefault();
+        });
+        // Rocky Top Student Center LINK
+        $("#rocky-top").click(function(event) {
+          alert("you selected: Rocky Top Student Center");
+          event.preventDefault();
+        });
+        // 53 undergrad majors LINK
+        $("#53-undergrads").click(function(event) {
+          alert("you selected: 53 undergrad majors");
+          event.preventDefault();
         });
       });
     </script>

@@ -1,3 +1,4 @@
+/* Rich Trevillian 2019-11-24 */
 /* EAB Web Designer interview test */
 /* search landing page */
 
@@ -7,13 +8,6 @@
 /* font-family: 'Roboto', sans-serif; */
 /* font-weight: 300; */
 /* font-weight: 500; */
-
-/* dev styles */
-
-footer {
-  background: #093550;
-  height: 200px;
-}
 
 /* production styles (xs breakpoints : mobile-first) */
 
@@ -111,6 +105,10 @@ section {
   min-height: 270px;
 }
 
+.hockey {
+  padding: 50px 20px;
+}
+
 .hockey-headline {
   font-family: "Cormorant", serif;
   font-weight: 500;
@@ -142,6 +140,53 @@ section {
   background-position-y: center;
 }
 
+/* (footer) more info section */
+
+footer {
+  background: #093550;
+}
+
+.footer {
+  padding: 50px 20px;
+}
+
+.footer-headline {
+  font-family: "Cormorant", serif;
+  font-weight: 500;
+  color: #fdc846;
+  margin-bottom: 30px;
+}
+
+.footer-copy {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #a9bac6;
+}
+
+.footer-copy a:link {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-copy a:visited {
+  color: #fdc846;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-copy a:hover {
+  color: #3b83bd;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-copy a:active {
+  color: #83bae8;
+  font-weight: 500;
+  text-decoration: none;
+}
+
 /* media queries for Bootstrap and larger breakpoints */
 
 /* sm */
@@ -162,9 +207,6 @@ section {
   .head-photo {
     min-height: 60vmin;
   }
-  h1 {
-    margin-top: 33px;
-  }
   main {
     height: 350px;
   }
@@ -181,7 +223,7 @@ section {
   }
   #mobile-hockey-photo {
     display: none;
-  }  
+  }
   .hockey-copy {
     max-width: 250px;
   }
@@ -206,7 +248,7 @@ section {
   }
   section {
     min-height: 450px;
-  }  
+  }
 }
 
 /* xl */
@@ -223,7 +265,7 @@ section {
   }
   section {
     min-height: 550px;
-  }  
+  }
 }
 
 @media screen and (min-width: 1600px) {
@@ -235,7 +277,7 @@ section {
   }
   .hockey-copy {
     max-width: 450px;
-  }  
+  }
 }
 
 @media screen and (min-width: 2200px) {
@@ -244,5 +286,5 @@ section {
   }
   section {
     min-height: 750px;
-  }  
+  }
 }
