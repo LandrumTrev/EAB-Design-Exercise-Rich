@@ -33,7 +33,7 @@ p {
 .head-photo {
   background-image: url("./images/q_students.jpg");
   background-size: cover;
-  min-height: 50vmin;
+  min-height: 75vmin;
 }
 
 /* greeting headline and copy */
