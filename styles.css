@@ -10,11 +10,6 @@
 
 /* dev styles */
 
-aside {
-  background: #fdc846;
-  height: 200px;
-}
-
 footer {
   background: #093550;
   height: 200px;
@@ -109,6 +104,44 @@ label {
   margin-bottom: 0.2rem;
 }
 
+/* Go Bobcats! download free hockey tickets section */
+
+section {
+  background: #fdc846;
+  min-height: 270px;
+}
+
+.hockey-headline {
+  font-family: "Cormorant", serif;
+  font-weight: 500;
+  color: #093550;
+}
+
+.hockey-copy {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #093550;
+}
+
+.hockey-copy span {
+  font-weight: 500;
+}
+
+.btn-dark {
+  background-color: #397aba;
+  border-color: #a9bac6;
+}
+
+/* mobile-only breakpoints hockey photo */
+#mobile-hockey-photo {
+  min-height: 400px;
+  background-image: url("./images/q_hockey.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
 /* media queries for Bootstrap and larger breakpoints */
 
 /* sm */
@@ -120,8 +153,8 @@ label {
     height: 530px;
   }
   .greeting {
-    padding: 50px 35px;
-  }  
+    padding: 50px 35px 30px;
+  }
 }
 
 /* md */
@@ -140,6 +173,18 @@ label {
     font-size: 1.1rem;
     margin-bottom: 20px;
   }
+  #hockey-section {
+    background-image: url("./images/q_hockey.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 130%;
+  }
+  #mobile-hockey-photo {
+    display: none;
+  }  
+  .hockey-copy {
+    max-width: 250px;
+  }
 }
 
 /* lg */
@@ -156,6 +201,12 @@ label {
     font-size: 1.3rem;
     margin-bottom: 23px;
   }
+  #hockey-section {
+    background-position-x: right;
+  }
+  section {
+    min-height: 450px;
+  }  
 }
 
 /* xl */
@@ -170,16 +221,28 @@ label {
   p {
     font-size: 1.35rem;
   }
+  section {
+    min-height: 550px;
+  }  
 }
 
 @media screen and (min-width: 1600px) {
   .head-photo {
     min-height: 75vmin;
   }
+  section {
+    min-height: 600px;
+  }
+  .hockey-copy {
+    max-width: 450px;
+  }  
 }
 
 @media screen and (min-width: 2200px) {
   .head-photo {
     min-height: 80vmin;
   }
+  section {
+    min-height: 750px;
+  }  
 }

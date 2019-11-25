@@ -18,28 +18,24 @@
     <title>Welcome to Quinnipiac!</title>
   </head>
   <body>
-
     <header>
-
       <div class="container-fluid head-photo">
         <img id="head-logo" src="./images/QU_logo_secondary_WHITE.svg" alt="Quinnipiac logo" />
       </div>
 
       <div class="container greeting">
         <div class="row">
-          <h1 class="greeting-headline col col-12 col-md-4">Hello there</h1>
-          <p class="greeting-copy col col-12 col-md-8">
+          <h1 class="greeting-headline col col-12 col-lg-4">Hello there</h1>
+          <p class="greeting-copy col col-12 col-lg-8">
             <span>Thanks for stopping by, xxStudentNamexx!</span> Before you download your <span>free hockey tickets</span>, please update the information we have on file for you.
           </p>
         </div>
       </div>
-      
     </header>
 
     <main class="container-fluid">
       <div class="container info">
         <div class="row">
-
           <div class="info-block col col-12 col-md-8">
             <h1 class="info-headline">Your information</h1>
             <p class="info-copy">
@@ -68,12 +64,23 @@
               </div>
             </form>
           </div>
-
         </div>
       </div>
     </main>
 
-    <aside class="container-fluid"></aside>
+    <aside id="mobile-hockey-photo"></aside>
+
+    <section class="container-fluid" id="hockey-section">
+      <div class="container info">
+        <div class="row">
+          <div class="hockey-block col col-12 col-md-8">
+            <h1 class="hockey-headline">Go Bobcats!</h1>
+            <p class="hockey-copy">xxStudentNamexx, we look forward to seeing you here for a <span>campus visit and a Quinnipiac Bobcats hockey game!</span></p>
+            <button id="hockey-button" type="submit" value="info-form" class="btn btn-dark">Download Your Free Tickets!</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer class="container-fluid"></footer>
 
@@ -101,6 +108,9 @@
           alert("Thanks!\nNow scroll down and get those free hockey tickets!\nSee ya soon!");
         });
         // Get Free Hockey Tickets button FPO
+        $("#hockey-button").click(function(event) {
+          alert("Go Bobcats!\nWe'll see you on the ice!");
+        });
       });
     </script>
   </body>
