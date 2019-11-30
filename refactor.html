@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Welcome to Quinnipiac!</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:500|Roboto:300,500&display=swap" rel="stylesheet" />
+
+    <style>
+      body {
+        margin: 0;
+      }
+      html {
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+      }
+      span {
+        font-weight: 500;
+      }
+      h1 {
+        font-size: 2.6rem;
+        font-family: "Cormorant", serif;
+        font-weight: 500;
+        margin: 0;
+      }
+      p {
+        margin: 10px 0 20px;
+        line-height: 1.35rem;
+        padding-left: 5px;
+      }
+      section {
+        /* background-color: #eee; */
+        /* min-height: 600px; */
+      }
+
+      /* flex content containers */
+      .split-content {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        padding: 40px;
+      }
+      .a {
+        /* background-color: aquamarine; */
+      }
+      .b {
+        /* background-color: lightskyblue; */
+      }
+      button {
+        font-weight: 500;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03rem;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      /* free hockey tickets section */
+      .hockey-text {
+        color: #093550;
+        background-color: #fdc846;
+      }
+      .hockey-text button {
+        background-color: #397aba;
+        border: 2px solid #a9bac6;
+        color: #fff;
+      }
+      .hockey-photo {
+        background-image: url("./images/q_hockey_crop.jpg");
+        background-size: cover;
+        min-height: 280px;
+      }
+
+      /* mobile landscape 568px - 760px */
+      @media screen and (min-width: 568px) {
+        section {
+          min-height: 320px;
+          background-color: orange;
+        }
+        .split-content {
+          flex-direction: row;
+        }
+        .content {
+          width: 50%;
+        }
+      }
+      /* tablet portrait 761px - 1370px */
+      @media screen and (min-width: 761px) {
+        section {
+          /* min-height: 320px; */
+          /* background-color: aquamarine; */
+        }
+        h1 {
+          font-size: 3.5rem;
+        }
+        p {
+          font-size: 1.3rem;
+          line-height: 1.8rem;
+        }
+        button {
+          font-size: 1rem;
+          letter-spacing: 0.06rem;
+        }
+      }
+      /* laptop 1370px - 2000px */
+      @media screen and (min-width: 1370px) {
+        section {
+          min-height: 320px;
+          background-color: lightskyblue;
+        }
+      }
+      /* desktop 2000px + */
+      @media screen and (min-width: 2000px) {
+        section {
+          min-height: 320px;
+          background-color: lightsalmon;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--  -->
+    <section>
+      <div class="split-content">
+        <div class="content a hockey-text">
+          <h1>Go Bobcats!</h1>
+          <p>xxStudentNamexx, we look forward to seeing you here for <span>a campus visit and a Quinnipiac Bobcats hockey game!</span></p>
+          <button>Get your free tickets!</button>
+        </div>
+        <div class="content b hockey-photo"></div>
+      </div>
+    </section>
+    <!--  -->
+  </body>
+</html>
