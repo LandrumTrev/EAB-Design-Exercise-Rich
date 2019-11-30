@@ -79,17 +79,20 @@
       /* mobile landscape 568px - 760px */
       @media screen and (min-width: 568px) {
         section {
-          min-height: 320px;
-          background-color: orange;
+          /* min-height: 320px; */
+          /* background-color: orange; */
         }
         .split-content {
           flex-direction: row;
         }
-        .content {
+        .hockey-text {
+          width: 50%;
+        }
+        .hockey-photo {
           width: 50%;
         }
       }
-      /* tablet portrait 761px - 1370px */
+      /* tablet portrait 761px - 1245px */
       @media screen and (min-width: 761px) {
         section {
           /* min-height: 320px; */
@@ -107,19 +110,60 @@
           letter-spacing: 0.06rem;
         }
       }
-      /* laptop 1370px - 2000px */
-      @media screen and (min-width: 1370px) {
+      /* laptop 1245px - 2000px */
+      @media screen and (min-width: 1245px) {
         section {
-          min-height: 320px;
-          background-color: lightskyblue;
+          /* min-height: 320px; */
+          /* background-color: lightskyblue; */
+        }
+        h1 {
+          font-size: 5.2rem;
+          margin-top: 60px;
+        }
+        p {
+          font-size: 2rem;
+          line-height: 2.6rem;
+          margin: 20px 5px 40px;
+        }
+        button {
+          font-size: 1.5rem;
+          letter-spacing: 0.08rem;
+        }
+        .hockey-photo {
+          min-height: 630px;
+          width: 60%;
+        }
+        .hockey-text {
+          width: 40%;
         }
       }
       /* desktop 2000px + */
       @media screen and (min-width: 2000px) {
         section {
-          min-height: 320px;
-          background-color: lightsalmon;
+          /* min-height: 320px; */
+          /* background-color: lightsalmon; */
         }
+        h1 {
+          font-size: 6.0rem;
+          margin-top: 80px
+        }
+        p {
+          font-size: 2rem;
+          line-height: 2.6rem;
+          margin: 20px 0 50px;
+        }
+        button {
+          font-size: 1.7rem;
+          letter-spacing: 0.08rem;
+        }
+        .hockey-photo {
+          min-height: 1100px;
+          width: 75%;
+        }
+        .hockey-text {
+          width: 25%;
+        }
+      }
       }
     </style>
   </head>
