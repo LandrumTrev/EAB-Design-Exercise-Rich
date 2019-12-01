@@ -19,9 +19,11 @@
       html {
         font-size: 16px;
       }
+
       body {
         margin: 0;
       }
+
       h1 {
         font-family: "Cormorant", serif;
         font-weight: 500;
@@ -29,6 +31,7 @@
         line-height: 1em;
         margin: 0;
       }
+
       p {
         font-family: "Roboto", sans-serif;
         font-weight: 300;
@@ -36,6 +39,7 @@
         line-height: 1.35em;
         padding-left: 5px;
       }
+
       span {
         font-weight: 500;
       }
@@ -45,9 +49,11 @@
         display: flex;
         flex-direction: column;
       }
+
       .content {
         padding: 40px;
       }
+
       button {
         font-weight: 800;
         font-size: 0.7rem;
@@ -58,13 +64,30 @@
         box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
       }
 
+      /* header photo and logo */
+      header {
+        background-image: url("./images/q_students.jpg");
+        background-size: cover;
+        background-position: 15%;
+        min-height: 95vmin;
+      }
+
+      #head-logo {
+        width: 85%;
+        right: 3%;
+        top: 1.5%;
+        position: absolute;
+      }
+
       /* greeting section */
       .greeting-section {
         color: #093550;
       }
+
       .greeting-head {
         padding: 40px 40px 5px 40px;
       }
+
       .greeting-text {
         padding: 0px 40px 20px 40px;
       }
@@ -74,25 +97,30 @@
         color: #fff;
         background-image: url("./images/QPattern_1X_Blue.png");
       }
+
       .info-text {
         padding: 40px 40px 20px 40px;
       }
+
       .info-text button {
         background-color: #fdc846;
         border: 2px solid #a9bac6;
         color: #093550;
         font-weight: 900;
       }
+
       .info-form {
         min-height: 280px;
         padding: 0px 40px 40px 40px;
       }
+
       label {
         color: #a9bac6;
         font-variant: small-caps;
         margin-bottom: 1px;
         font-size: 0.9rem;
       }
+
       .form-group {
         margin-bottom: 0.2rem;
       }
@@ -102,11 +130,13 @@
         color: #093550;
         background-color: #fdc846;
       }
+
       .hockey-text button {
         background-color: #397aba;
         border: 2px solid #a9bac6;
         color: #fff;
       }
+
       .hockey-photo {
         background-image: url("./images/q_hockey_crop.jpg");
         background-size: cover;
@@ -115,37 +145,52 @@
 
       /* mobile landscape 568px - 760px */
       @media screen and (min-width: 568px) {
+        header {
+          min-height: 100vmin;
+          background-position: 5%;
+        }
+
+        #head-logo {
+          width: 55%;
+          top: 5%;
+        }
+
         .content {
           padding: 40px;
         }
+
         .split-content {
           flex-direction: row;
         }
+
         .greeting-head h1 {
           margin-top: 25px;
         }
-        /* .greeting-head p {
-          margin-bottom: 100px;
-        } */
+
         .greeting-head {
           width: 50%;
           padding-bottom: 10px;
         }
+
         .greeting-text {
           width: 50%;
           padding: 10px 20px 0px 0px;
           margin: 0px;
         }
+
         .info-text {
           width: 50%;
         }
+
         .info-form {
           width: 50%;
           padding: 40px 20px 40px 0px;
         }
+
         .hockey-text {
           width: 50%;
         }
+
         .hockey-photo {
           width: 50%;
         }
@@ -153,19 +198,33 @@
 
       /* tablet portrait 761px - 1245px */
       @media screen and (min-width: 761px) {
+        header {
+          min-height: 89vmin;
+          background-position: 12%;
+        }
+
+        #head-logo {
+          width: 58%;
+          top: 2.5%;
+        }
+
         h1 {
           font-size: 3.2rem;
         }
+
         p {
           font-size: 1.1rem;
         }
+
         button {
           font-size: 0.9rem;
           letter-spacing: 0.06rem;
         }
+
         .greeting-head {
           padding-bottom: 10px;
         }
+
         .greeting-text {
           max-width: 45%;
         }
@@ -173,6 +232,16 @@
 
       /* special 925px - 2000px */
       @media screen and (min-width: 925px) {
+        header {
+          min-height: 84vmin;
+          background-position: 10%;
+        }
+
+        #head-logo {
+          width: 55%;
+          top: 3%;
+        }
+
         .greeting-text p {
           margin-top: 30px;
           width: 100%;
@@ -185,38 +254,48 @@
           font-size: 4.2rem;
           margin-top: 60px;
         }
+
         p {
           font-size: 1.4rem;
           margin: 20px 5px 40px;
         }
+
         button {
           font-size: 1.1rem;
           letter-spacing: 0.08rem;
         }
+
         .greeting-head h1 {
           margin-top: 30px;
         }
+
         .greeting-head {
           width: 40%;
         }
+
         .greeting-text {
           width: 60%;
         }
+
         .info-text {
           width: 40%;
         }
+
         .info-text h1 {
           margin-top: 0;
         }
+
         .info-form {
           width: 60%;
           padding: 40px 250px 40px 0px;
           margin: auto 0;
         }
+
         .hockey-photo {
           min-height: 630px;
           width: 60%;
         }
+
         .hockey-text {
           width: 40%;
         }
@@ -234,38 +313,50 @@
         .greeting-text p {
           width: 60%;
         }
+
         .greeting-head {
           width: 25%;
         }
+
         .greeting-text {
           width: 75%;
         }
+
         .greeting-text p {
           width: 100%;
         }
+
         .info-text {
           width: 25%;
         }
+
         .info-text h1 {
           margin-top: 0;
         }
+
         .info-form {
           width: 75%;
           padding: 40px 700px 40px 0px;
           margin: auto 0;
         }
+
         .hockey-photo {
           min-height: 1100px;
           width: 75%;
         }
+
         .hockey-text {
           width: 25%;
         }
       }
     </style>
   </head>
+
   <body>
     <!-- HEADER -->
+    <header>
+      <img id="head-logo" src="./images/QU_logo_secondary_WHITE.svg" alt="Quinnipiac logo" />
+    </header>
 
     <!-- GREETING -->
     <section class="greeting-section">
@@ -359,26 +450,31 @@
           alert("Thanks!\nNow scroll down and get those free hockey tickets!\nSee ya soon!");
           event.preventDefault();
         });
+
         // Get Free Hockey Tickets button FPO
         $("#hockey-button").click(function(event) {
           alert("Go Bobcats!\nWe'll see you on the ice!");
           event.preventDefault();
         });
+
         // navigating financial aid LINK
         $("#financial-aid").click(function(event) {
           alert("you selected: Navigating financial aid");
           event.preventDefault();
         });
+
         // get involved right away LINK
         $("#get-involved").click(function(event) {
           alert("you selected: get involved right away");
           event.preventDefault();
         });
+
         // Rocky Top Student Center LINK
         $("#rocky-top").click(function(event) {
           alert("you selected: Rocky Top Student Center");
           event.preventDefault();
         });
+
         // 53 undergrad majors LINK
         $("#53-undergrads").click(function(event) {
           alert("you selected: 53 undergrad majors");
