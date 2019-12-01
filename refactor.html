@@ -92,6 +92,45 @@
         padding: 0px 40px 20px 40px;
       }
 
+      /* update info modal */
+      #modal-logo {
+        width: 150px;
+        /* position: relative; */
+        /* top: 5px; */
+        /* left: 5px; */
+      }
+
+      .info-modal-header .close {
+        color: #093550;
+        background-color: #fdc846;
+        border-radius: 0px;
+        padding: 19px 21px;
+      }
+
+      .info-modal-header {
+        border-radius: 0px;
+        background-image: url("./images/QPattern_1X_NavyBlue.png");
+        color: #fff;
+      }
+
+      .info-modal-body {
+        border-radius: 0px;
+        background-image: url("./images/QPattern_1X_Grey.png");
+        color: #397aba;
+      }
+
+      .info-modal-body h1 {
+        margin: 10px 0;
+      }
+
+      .info-modal-body p {
+        font-size: 1.3rem;
+        line-height: 1.2em;
+        font-weight: 500;
+        color: #397aba;
+        margin: 10px 0;
+      }
+
       /* update info section */
       .info-section {
         color: #fff;
@@ -421,14 +460,33 @@
       </div>
     </section>
 
-    <!-- INFORMATION -->
+    <!-- INFORMATION MODAL -->
+    <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header info-modal-header">
+            <img id="modal-logo" src="./images/QU_logo_secondary_WHITE.svg" alt="Quinnipiac logo" />
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body info-modal-body">
+            <h1>Thank you!</h1>
+            <p>Now scroll down and get those <br />free hockey tickets!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFORMATION SECTION -->
     <section class="info-section">
       <div class="split-content">
         <!--  -->
         <div class="content info-text">
           <h1>Your information</h1>
           <p>We want to stay in touch with you as you prepare for college. <strong>Is this your most up-to-date contact information? </strong></p>
-          <button id="info-button">Confirm / Submit Update</button>
+
+          <button id="info-button" data-toggle="modal" data-target="#info-modal">Confirm / Submit Update</button>
         </div>
         <!--  -->
         <div class="content info-form">
@@ -504,10 +562,10 @@
       // jquery script container
       $(document).ready(function() {
         // Confirm/Update Info button FPO
-        $("#info-button").click(function(event) {
-          alert("Thanks!\nNow scroll down and get those free hockey tickets!\nSee ya soon!");
-          event.preventDefault();
-        });
+        // $("#info-button").click(function(event) {
+        //   alert("Thanks!\nNow scroll down and get those free hockey tickets!\nSee ya soon!");
+        //   event.preventDefault();
+        // });
 
         // Get Free Hockey Tickets button FPO
         $("#hockey-button").click(function(event) {
