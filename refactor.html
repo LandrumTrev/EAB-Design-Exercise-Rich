@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Welcome to Quinnipiac!</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Cormorant:500|Roboto:100,200,300,400,500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:500|Roboto:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
     <!-- Bootstrap CDN CSS -->
     <link
       rel="stylesheet"
@@ -49,13 +49,24 @@
         padding: 40px;
       }
       button {
-        font-weight: 500;
+        font-weight: 800;
         font-size: 0.7rem;
         text-transform: uppercase;
         letter-spacing: 0.02rem;
         padding: 0.5em 1em 0.5em 1em;
         border-radius: 5px;
         box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      /* greeting section */
+      .greeting-section {
+        color: #093550;
+      }
+      .greeting-head {
+        padding: 40px 40px 5px 40px;
+      }
+      .greeting-text {
+        padding: 0px 40px 20px 40px;
       }
 
       /* update info section */
@@ -70,6 +81,7 @@
         background-color: #fdc846;
         border: 2px solid #a9bac6;
         color: #093550;
+        font-weight: 900;
       }
       .info-form {
         min-height: 280px;
@@ -109,11 +121,20 @@
         .split-content {
           flex-direction: row;
         }
-        .hockey-text {
-          width: 50%;
+        .greeting-head h1 {
+          margin-top: 25px;
         }
-        .hockey-photo {
+        /* .greeting-head p {
+          margin-bottom: 100px;
+        } */
+        .greeting-head {
           width: 50%;
+          padding-bottom: 10px;
+        }
+        .greeting-text {
+          width: 50%;
+          padding: 10px 20px 0px 0px;
+          margin: 0px;
         }
         .info-text {
           width: 50%;
@@ -122,7 +143,14 @@
           width: 50%;
           padding: 40px 20px 40px 0px;
         }
+        .hockey-text {
+          width: 50%;
+        }
+        .hockey-photo {
+          width: 50%;
+        }
       }
+
       /* tablet portrait 761px - 1245px */
       @media screen and (min-width: 761px) {
         h1 {
@@ -135,7 +163,22 @@
           font-size: 0.9rem;
           letter-spacing: 0.06rem;
         }
+        .greeting-head {
+          padding-bottom: 10px;
+        }
+        .greeting-text {
+          max-width: 45%;
+        }
       }
+
+      /* special 925px - 2000px */
+      @media screen and (min-width: 925px) {
+        .greeting-text p {
+          margin-top: 30px;
+          width: 100%;
+        }
+      }
+
       /* laptop 1245px - 2000px */
       @media screen and (min-width: 1245px) {
         h1 {
@@ -150,12 +193,14 @@
           font-size: 1.1rem;
           letter-spacing: 0.08rem;
         }
-        .hockey-photo {
-          min-height: 630px;
-          width: 60%;
+        .greeting-head h1 {
+          margin-top: 30px;
         }
-        .hockey-text {
+        .greeting-head {
           width: 40%;
+        }
+        .greeting-text {
+          width: 60%;
         }
         .info-text {
           width: 40%;
@@ -168,15 +213,35 @@
           padding: 40px 250px 40px 0px;
           margin: auto 0;
         }
-      }
-      /* desktop 2000px + */
-      @media screen and (min-width: 2000px) {
         .hockey-photo {
-          min-height: 1100px;
-          width: 75%;
+          min-height: 630px;
+          width: 60%;
         }
         .hockey-text {
+          width: 40%;
+        }
+      }
+
+      /* special 1661px - 2000px */
+      @media screen and (min-width: 1661px) {
+        .greeting-head h1 {
+          margin-top: 0px;
+        }
+      }
+
+      /* desktop 2000px + */
+      @media screen and (min-width: 2000px) {
+        .greeting-text p {
+          width: 60%;
+        }
+        .greeting-head {
           width: 25%;
+        }
+        .greeting-text {
+          width: 75%;
+        }
+        .greeting-text p {
+          width: 100%;
         }
         .info-text {
           width: 25%;
@@ -189,20 +254,44 @@
           padding: 40px 700px 40px 0px;
           margin: auto 0;
         }
+        .hockey-photo {
+          min-height: 1100px;
+          width: 75%;
+        }
+        .hockey-text {
+          width: 25%;
+        }
       }
     </style>
   </head>
   <body>
-    <!--  -->
-    <!-- header -->
-    <!--  -->
+    <!-- HEADER -->
+
+    <!-- GREETING -->
+    <section class="greeting-section">
+      <div class="split-content">
+        <!--  -->
+        <div class="content greeting-head">
+          <h1>Hello there</h1>
+        </div>
+        <!--  -->
+        <div class="content greeting-text">
+          <p><span>Thanks for stopping by, xxStudentNamexx!</span> Before you download your <span>free hockey tickets,</span> please update the information we have on file for you.</p>
+        </div>
+        <!--  -->
+      </div>
+    </section>
+
+    <!-- INFORMATION -->
     <section class="info-section">
       <div class="split-content">
+        <!--  -->
         <div class="content info-text">
           <h1>Your information</h1>
           <p>We want to stay in touch with you as you prepare for college. <span>Is this your most up-to-date contact information? </span></p>
           <button id="info-button">Confirm / Submit Update</button>
         </div>
+        <!--  -->
         <div class="content info-form">
           <form id="info-form" action="" method="post">
             <div class="form-group">
@@ -223,22 +312,29 @@
             </div>
           </form>
         </div>
+        <!--  -->
       </div>
     </section>
-    <!--  -->
+
+    <!-- HOCKEY TICKETS -->
     <section class="hockey-section">
       <div class="split-content">
+        <!--  -->
         <div class="content hockey-text">
           <h1>Go Bobcats!</h1>
           <p>xxStudentNamexx, we look forward to seeing you here for <span>a campus visit and a Quinnipiac Bobcats hockey game!</span></p>
           <button id="hockey-button">Get your free tickets!</button>
         </div>
+        <!--  -->
         <div class="content b hockey-photo"></div>
+        <!--  -->
       </div>
     </section>
-    <!--  -->
-    <!-- footer -->
-    <!--  -->
+
+    <!-- FOOTER -->
+
+    <!-- END HTML / START JS -->
+
     <!-- Bootstrap CDN JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
