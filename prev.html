@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Rich Trevillian 2019-11-24 -->
+    <!-- EAB Web Designer interview test -->
+    <!-- search landing page -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap CDN CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- local CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:500|Roboto:300,500&display=swap" rel="stylesheet" />
+    <title>Welcome to Quinnipiac!</title>
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid head-photo">
+        <img id="head-logo" src="./images/QU_logo_secondary_WHITE.svg" alt="Quinnipiac logo" />
+      </div>
+
+      <div class="container greeting">
+        <div class="row">
+          <h1 class="greeting-headline col col-12 col-lg-4">Hello there</h1>
+          <p class="greeting-copy col col-12 col-lg-8">
+            <span>Thanks for stopping by, xxStudentNamexx!</span> Before you download your <span>free hockey tickets</span>, please update the information we have on file for you.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="container-fluid">
+      <div class="container info">
+        <div class="row">
+          <div class="info-block col col-12 col-md-8">
+            <h1 class="info-headline">Your information</h1>
+            <p class="info-copy">
+              We want to stay in touch with you as you prepare for college. <span>Is this your most up-to-date contact information?</span>
+            </p>
+            <button id="info-button" type="submit" value="info-form" class="btn btn-warning">Confirm / Update Info</button>
+          </div>
+
+          <div class="info-form-column col col-12 col-md-4">
+            <form id="info-form" action="" method="post">
+              <div class="form-group">
+                <label for="first-name">first name</label>
+                <input id="first-name" class="form-control form-control-sm" type="text" name="firstname" value="Alex" />
+              </div>
+              <div class="form-group">
+                <label for="last-name">last name</label>
+                <input id="last-name" class="form-control form-control-sm" type="text" name="lastname" value="Royall" />
+              </div>
+              <div class="form-group">
+                <label for="email-address">email address</label>
+                <input id="email-address" class="form-control form-control-sm" type="email" name="emailaddress" value="alex@royall.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone-number">phone number</label>
+                <input id="phone-number" class="form-control form-control-sm" type="tel" name="phonenumber" value="804-867-5309" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside id="mobile-hockey-photo"></aside>
+
+    <section class="container-fluid" id="hockey-section">
+      <div class="container hockey">
+        <div class="row">
+          <div class="hockey-block col col-12 col-md-8">
+            <h1 class="hockey-headline">Go Bobcats!</h1>
+            <p class="hockey-copy">xxStudentNamexx, we look forward to seeing you here for <span>a campus visit and a Quinnipiac Bobcats hockey game!</span></p>
+            <button id="hockey-button" type="submit" value="info-form" class="btn btn-dark">Download Your Free Tickets!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container-fluid">
+      <div class="container footer">
+        <div class="row">
+          <div class="footer-block col col-12">
+            <h1 class="footer-headline">In the meantime, find out more about Quinnipiac:</h1>
+            <p class="footer-copy">You'll have all the help you need <a href="#" id="financial-aid">navigating the financial aid process</a>.</p>
+            <p class="footer-copy">You'll find many ways to <a href="#" id="get-involved">get involved right away</a> during freshman year.</p>
+            <p class="footer-copy"><a href="#" id="rocky-top">The Rocky Top Student Center</a> has something for everyone ... and it's really cool-looking!</p>
+            <p class="footer-copy">With <a href="#" id="53-undergrads">53 undergraduate majors</a> to choose from, you're bound to find your fit.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap CDN JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery dummy alerts for link clicks -->
+    <script>
+      // jquery script container
+      $(document).ready(function() {
+        // Confirm/Update Info button FPO
+        $("#info-button").click(function(event) {
+          alert("Thanks!\nNow scroll down and get those free hockey tickets!\nSee ya soon!");
+          event.preventDefault();
+        });
+        // Get Free Hockey Tickets button FPO
+        $("#hockey-button").click(function(event) {
+          alert("Go Bobcats!\nWe'll see you on the ice!");
+          event.preventDefault();
+        });
+        // navigating financial aid LINK
+        $("#financial-aid").click(function(event) {
+          alert("you selected: Navigating financial aid");
+          event.preventDefault();
+        });
+        // get involved right away LINK
+        $("#get-involved").click(function(event) {
+          alert("you selected: get involved right away");
+          event.preventDefault();
+        });
+        // Rocky Top Student Center LINK
+        $("#rocky-top").click(function(event) {
+          alert("you selected: Rocky Top Student Center");
+          event.preventDefault();
+        });
+        // 53 undergrad majors LINK
+        $("#53-undergrads").click(function(event) {
+          alert("you selected: 53 undergrad majors");
+          event.preventDefault();
+        });
+      });
+    </script>
+  </body>
+</html>

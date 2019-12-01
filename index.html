@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Rich Trevillian 2019-11-24 -->
+    <!-- Rich Trevillian 2019-12-01 (refactored code) -->
     <!-- EAB Web Designer interview test -->
     <!-- search landing page -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Welcome to Quinnipiac!</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:500|Roboto:300,500,800,900&display=swap" rel="stylesheet" />
     <!-- Bootstrap CDN CSS -->
     <link
       rel="stylesheet"
@@ -14,90 +17,584 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <!-- local CSS -->
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Cormorant:500|Roboto:300,500&display=swap" rel="stylesheet" />
-    <title>Welcome to Quinnipiac!</title>
-  </head>
-  <body>
-    <header>
-      <div class="container-fluid head-photo">
-        <img id="head-logo" src="./images/QU_logo_secondary_WHITE.svg" alt="Quinnipiac logo" />
-      </div>
+    <style>
+      /* document styles */
+      html {
+        font-size: 16px;
+      }
 
-      <div class="container greeting">
-        <div class="row">
-          <h1 class="greeting-headline col col-12 col-lg-4">Hello there</h1>
-          <p class="greeting-copy col col-12 col-lg-8">
-            <span>Thanks for stopping by, xxStudentNamexx!</span> Before you download your <span>free hockey tickets</span>, please update the information we have on file for you.
-          </p>
-        </div>
-      </div>
+      body {
+        margin: 0;
+      }
+
+      h1 {
+        font-family: "Cormorant", serif;
+        font-weight: 500;
+        font-size: 2.6rem;
+        line-height: 1em;
+        margin: 0;
+      }
+
+      p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        margin: 10px 0 20px;
+        line-height: 1.35em;
+        padding-left: 5px;
+      }
+
+      strong {
+        font-weight: 500;
+      }
+
+      /* flex content containers */
+      .split-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      button {
+        font-weight: 800;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.02rem;
+        padding: 0.5em 1em 0.5em 1em;
+        border-radius: 5px;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      /* header photo and logo */
+      header {
+        background-image: url("./images/q_students.jpg");
+        background-size: cover;
+        background-position: 15%;
+        min-height: 95vmin;
+      }
+
+      #head-logo {
+        width: 85%;
+        right: 3%;
+        top: 1.5%;
+        position: absolute;
+      }
+
+      /* greeting section */
+      .greeting-section {
+        color: #093550;
+      }
+
+      .greeting-head {
+        padding: 40px 40px 5px 40px;
+      }
+
+      .greeting-text {
+        padding: 0px 40px 20px 40px;
+      }
+
+      /* update info modal */
+      #modal-logo {
+        width: 150px;
+      }
+
+      .info-modal-header .close {
+        color: #093550;
+        background-color: #fdc846;
+        border-radius: 0px;
+        padding: 19px 21px;
+      }
+
+      .info-modal-header {
+        border-radius: 0px;
+        background-image: url("./images/QPattern_1X_NavyBlue.png");
+        color: #fff;
+      }
+
+      .info-modal-body {
+        border-radius: 0px;
+        background-image: url("./images/QPattern_1X_Grey.png");
+        color: #397aba;
+      }
+
+      .info-modal-body h1 {
+        margin: 10px 0;
+      }
+
+      .info-modal-body p {
+        font-size: 1.3rem;
+        line-height: 1.2em;
+        font-weight: 500;
+        color: #397aba;
+        margin: 20px 0;
+      }
+
+      /* update info section */
+      .info-section {
+        color: #fff;
+        background-image: url("./images/QPattern_1X_Blue.png");
+      }
+
+      .info-text {
+        padding: 40px 40px 20px 40px;
+      }
+
+      .info-text button {
+        background-color: #fdc846;
+        border: 2px solid #a9bac6;
+        color: #093550;
+        font-weight: 900;
+      }
+
+      .info-form {
+        min-height: 280px;
+        padding: 0px 40px 40px 40px;
+      }
+
+      label {
+        color: #a9bac6;
+        font-variant: small-caps;
+        margin-bottom: 1px;
+        font-size: 0.9rem;
+      }
+
+      .form-group {
+        margin-bottom: 0.2rem;
+      }
+
+      /* hockey tickets modal */
+      .hockey-modal-header .close {
+        color: #fff;
+        background-color: #093550;
+        border-radius: 0px;
+        padding: 19px 21px;
+      }
+
+      .hockey-modal-header {
+        border-radius: 0px;
+        background-image: url("./images/QPattern_1X_Blue.png");
+        color: #fff;
+      }
+
+      .hockey-modal-body {
+        border-radius: 0px;
+        background-image: url("./images/QPattern_1X_White.png");
+        color: #093550;
+      }
+
+      .hockey-modal-body h1 {
+        margin: 10px 0;
+      }
+
+      .hockey-modal-body p {
+        font-size: 1.3rem;
+        line-height: 1.2em;
+        font-weight: 500;
+        color: #093550;
+        margin: 20px 0;
+      }
+
+      /* free hockey tickets section */
+      .hockey-section {
+        color: #093550;
+        background-color: #fdc846;
+      }
+
+      .hockey-text button {
+        background-color: #397aba;
+        border: 2px solid #a9bac6;
+        color: #fff;
+      }
+
+      .hockey-photo {
+        background-image: url("./images/q_hockey_crop.jpg");
+        background-size: cover;
+        min-height: 280px;
+      }
+
+      /* footer (more info) section */
+
+      footer {
+        background: #093550;
+      }
+
+      .footer-headline {
+        font-family: "Cormorant", serif;
+        font-weight: 500;
+        color: #fdc846;
+        margin-bottom: 30px;
+      }
+
+      .footer-copy {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        color: #a9bac6;
+        margin: 20px 5px;
+      }
+
+      .footer-copy a {
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .footer-copy a:link {
+        color: #fff;
+      }
+
+      .footer-copy a:visited {
+        color: #fdc846;
+      }
+
+      .footer-copy a:hover {
+        color: #3b83bd;
+      }
+
+      .footer-copy a:active {
+        color: #83bae8;
+      }
+
+      /* ------------- */
+      /* MEDIA QUERIES */
+      /* ------------- */
+
+      /* mobile landscape 568px - 760px */
+      @media screen and (min-width: 568px) {
+        header {
+          min-height: 100vmin;
+          background-position: 5%;
+        }
+
+        #head-logo {
+          width: 55%;
+          top: 5%;
+        }
+
+        .content {
+          padding: 40px;
+        }
+
+        .split-content {
+          flex-direction: row;
+        }
+
+        .greeting-head h1 {
+          margin-top: 25px;
+        }
+
+        .greeting-head {
+          width: 50%;
+          padding-bottom: 10px;
+        }
+
+        .greeting-text {
+          width: 50%;
+          padding: 10px 20px 0px 0px;
+          margin: 0px;
+        }
+
+        .info-text {
+          width: 50%;
+        }
+
+        .info-form {
+          width: 50%;
+          padding: 40px 20px 40px 0px;
+        }
+
+        .hockey-text {
+          width: 50%;
+        }
+
+        .hockey-photo {
+          width: 50%;
+        }
+      }
+
+      /* tablet portrait 761px - 1245px */
+      @media screen and (min-width: 761px) {
+        header {
+          min-height: 89vmin;
+          background-position: 12%;
+        }
+
+        #head-logo {
+          width: 58%;
+          top: 2.5%;
+        }
+
+        h1 {
+          font-size: 3.2rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+        }
+
+        button {
+          font-size: 0.9rem;
+          letter-spacing: 0.06rem;
+        }
+
+        .greeting-head {
+          padding-bottom: 10px;
+        }
+
+        .greeting-text {
+          max-width: 45%;
+        }
+      }
+
+      /* special 925px - 2000px */
+      @media screen and (min-width: 925px) {
+        header {
+          min-height: 84vmin;
+          background-position: 10%;
+        }
+
+        #head-logo {
+          width: 55%;
+          top: 3%;
+        }
+
+        .greeting-text p {
+          margin-top: 30px;
+          width: 100%;
+        }
+      }
+
+      /* laptop 1245px - 2000px */
+      @media screen and (min-width: 1245px) {
+        h1 {
+          font-size: 4.2rem;
+          margin-top: 60px;
+        }
+
+        p {
+          font-size: 1.4rem;
+          margin: 20px 5px 40px;
+        }
+
+        button {
+          font-size: 1.1rem;
+          letter-spacing: 0.08rem;
+        }
+
+        .greeting-head h1 {
+          margin-top: 30px;
+        }
+
+        .greeting-head {
+          width: 40%;
+        }
+
+        .greeting-text {
+          width: 60%;
+        }
+
+        .info-text {
+          width: 40%;
+        }
+
+        .info-text h1 {
+          margin-top: 0;
+        }
+
+        .info-form {
+          width: 60%;
+          padding: 40px 250px 40px 0px;
+          margin: auto 0;
+        }
+
+        .hockey-photo {
+          min-height: 630px;
+          width: 60%;
+        }
+
+        .hockey-text {
+          width: 40%;
+        }
+      }
+
+      /* special 1661px - 2000px */
+      @media screen and (min-width: 1661px) {
+        .greeting-head h1 {
+          margin-top: 0px;
+        }
+      }
+
+      /* desktop 2000px + */
+      @media screen and (min-width: 2000px) {
+        .greeting-text p {
+          width: 60%;
+        }
+
+        .greeting-head {
+          width: 25%;
+        }
+
+        .greeting-text {
+          width: 75%;
+        }
+
+        .greeting-text p {
+          width: 100%;
+        }
+
+        .info-text {
+          width: 25%;
+        }
+
+        .info-text h1 {
+          margin-top: 0;
+        }
+
+        .info-form {
+          width: 75%;
+          padding: 40px 700px 40px 0px;
+          margin: auto 0;
+        }
+
+        .hockey-photo {
+          min-height: 1100px;
+          width: 75%;
+        }
+
+        .hockey-text {
+          width: 25%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <img id="head-logo" src="./images/QU_logo_secondary_WHITE.svg" alt="Quinnipiac logo" />
     </header>
 
-    <main class="container-fluid">
-      <div class="container info">
-        <div class="row">
-          <div class="info-block col col-12 col-md-8">
-            <h1 class="info-headline">Your information</h1>
-            <p class="info-copy">
-              We want to stay in touch with you as you prepare for college. <span>Is this your most up-to-date contact information?</span>
-            </p>
-            <button id="info-button" type="submit" value="info-form" class="btn btn-warning">Confirm / Update Info</button>
-          </div>
-
-          <div class="info-form-column col col-12 col-md-4">
-            <form id="info-form" action="" method="post">
-              <div class="form-group">
-                <label for="first-name">first name</label>
-                <input id="first-name" class="form-control form-control-sm" type="text" name="firstname" value="Alex" />
-              </div>
-              <div class="form-group">
-                <label for="last-name">last name</label>
-                <input id="last-name" class="form-control form-control-sm" type="text" name="lastname" value="Royall" />
-              </div>
-              <div class="form-group">
-                <label for="email-address">email address</label>
-                <input id="email-address" class="form-control form-control-sm" type="email" name="emailaddress" value="alex@royall.com" />
-              </div>
-              <div class="form-group">
-                <label for="phone-number">phone number</label>
-                <input id="phone-number" class="form-control form-control-sm" type="tel" name="phonenumber" value="804-867-5309" />
-              </div>
-            </form>
-          </div>
+    <!-- GREETING -->
+    <section class="greeting-section">
+      <div class="split-content">
+        <!--  -->
+        <div class="content greeting-head">
+          <h1>Hello there</h1>
         </div>
-      </div>
-    </main>
-
-    <aside id="mobile-hockey-photo"></aside>
-
-    <section class="container-fluid" id="hockey-section">
-      <div class="container hockey">
-        <div class="row">
-          <div class="hockey-block col col-12 col-md-8">
-            <h1 class="hockey-headline">Go Bobcats!</h1>
-            <p class="hockey-copy">xxStudentNamexx, we look forward to seeing you here for <span>a campus visit and a Quinnipiac Bobcats hockey game!</span></p>
-            <button id="hockey-button" type="submit" value="info-form" class="btn btn-dark">Download Your Free Tickets!</button>
-          </div>
+        <!--  -->
+        <div class="content greeting-text">
+          <p>
+            <strong>Thanks for stopping by, <span id="student-name">xxStudentNamexx!</span></strong> Before you download your <strong>free hockey tickets,</strong> please update the information we
+            have on file for you.
+          </p>
         </div>
+        <!--  -->
       </div>
     </section>
 
-    <footer class="container-fluid">
-      <div class="container footer">
-        <div class="row">
-          <div class="footer-block col col-12">
-            <h1 class="footer-headline">In the meantime, find out more about Quinnipiac:</h1>
-            <p class="footer-copy">You'll have all the help you need <a href="#" id="financial-aid">navigating the financial aid process</a>.</p>
-            <p class="footer-copy">You'll find many ways to <a href="#" id="get-involved">get involved right away</a> during freshman year.</p>
-            <p class="footer-copy"><a href="#" id="rocky-top">The Rocky Top Student Center</a> has something for everyone ... and it's really cool-looking!</p>
-            <p class="footer-copy">With <a href="#" id="53-undergrads">53 undergraduate majors</a> to choose from, you're bound to find your fit.</p>
+    <!-- INFORMATION MODAL -->
+    <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header info-modal-header">
+            <img id="modal-logo" src="./images/QU_logo_secondary_WHITE.svg" alt="Quinnipiac logo" />
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body info-modal-body">
+            <h1>Thank you!</h1>
+            <p>Now scroll down and get those <br />free hockey tickets!</p>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- INFORMATION SECTION -->
+    <section class="info-section">
+      <div class="split-content">
+        <!--  -->
+        <div class="content info-text">
+          <h1>Your information</h1>
+          <p>We want to stay in touch with you as you prepare for college. <strong>Is this your most up-to-date contact information? </strong></p>
+
+          <button id="info-button" data-toggle="modal" data-target="#info-modal">Confirm / Submit Update</button>
+        </div>
+        <!--  -->
+        <div class="content info-form">
+          <form id="info-form" action="" method="post">
+            <div class="form-group">
+              <label for="first-name">first name</label>
+              <input id="first-name" class="form-control form-control-sm" type="text" name="firstname" value="Alex" />
+            </div>
+            <div class="form-group">
+              <label for="last-name">last name</label>
+              <input id="last-name" class="form-control form-control-sm" type="text" name="lastname" value="Royall" />
+            </div>
+            <div class="form-group">
+              <label for="email-address">email address</label>
+              <input id="email-address" class="form-control form-control-sm" type="email" name="emailaddress" value="alex@royall.com" />
+            </div>
+            <div class="form-group">
+              <label for="phone-number">phone number</label>
+              <input id="phone-number" class="form-control form-control-sm" type="tel" name="phonenumber" value="804-867-5309" />
+            </div>
+          </form>
+        </div>
+        <!--  -->
+      </div>
+    </section>
+
+    <!-- HOCKEY TICKETS MODAL -->
+    <div class="modal fade" id="hockey-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header hockey-modal-header">
+            <img id="modal-logo" src="./images/QU_logo_secondary_WHITE.svg" alt="Quinnipiac logo" />
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body hockey-modal-body">
+            <h1>Enjoy the game!</h1>
+            <p>
+              Have a great trip and <br />
+              we'll see you soon!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOCKEY TICKETS -->
+    <section class="hockey-section">
+      <div class="split-content">
+        <!--  -->
+        <div class="content hockey-text">
+          <h1>Go Bobcats!</h1>
+          <p><span id="student-name">xxStudentNamexx</span>, we look forward to seeing you here for <strong>a campus visit and a Quinnipiac Bobcats hockey game!</strong></p>
+
+          <button id="hockey-button" data-toggle="modal" data-target="#hockey-modal">Get your free tickets!</button>
+        </div>
+        <!--  -->
+        <div class="content b hockey-photo"></div>
+        <!--  -->
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="content">
+      <!--  -->
+      <h1 class="footer-headline">In the meantime, find out more about Quinnipiac:</h1>
+      <!--  -->
+      <p class="footer-copy">You'll have all the help you need <a href="#" id="financial-aid">navigating the financial aid process</a>.</p>
+      <p class="footer-copy">You'll find many ways to <a href="#" id="get-involved">get involved right away</a> during freshman year.</p>
+      <p class="footer-copy"><a href="#" id="rocky-top">The Rocky Top Student Center</a> has something for everyone ... and it's really cool-looking!</p>
+      <p class="footer-copy">With <a href="#" id="53-undergrads">53 undergraduate majors</a> to choose from, you're bound to find your fit.</p>
+      <!--  -->
     </footer>
+
+    <!-- END HTML / START JS -->
 
     <!-- Bootstrap CDN JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -114,38 +611,31 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- jQuery dummy alerts for link clicks -->
+    <!-- jQuery dev instructions alerts for footer link clicks -->
     <script>
       // jquery script container
       $(document).ready(function() {
-        // Confirm/Update Info button FPO
-        $("#info-button").click(function(event) {
-          alert("Thanks!\nNow scroll down and get those free hockey tickets!\nSee ya soon!");
-          event.preventDefault();
-        });
-        // Get Free Hockey Tickets button FPO
-        $("#hockey-button").click(function(event) {
-          alert("Go Bobcats!\nWe'll see you on the ice!");
-          event.preventDefault();
-        });
         // navigating financial aid LINK
         $("#financial-aid").click(function(event) {
-          alert("you selected: Navigating financial aid");
+          alert("you selected: \nNavigating financial aid \n(collect click-through data, open page in new tab)");
           event.preventDefault();
         });
+
         // get involved right away LINK
         $("#get-involved").click(function(event) {
-          alert("you selected: get involved right away");
+          alert("you selected: \nGet involved right away \n(collect click-through data, open page in new tab)");
           event.preventDefault();
         });
+
         // Rocky Top Student Center LINK
         $("#rocky-top").click(function(event) {
-          alert("you selected: Rocky Top Student Center");
+          alert("you selected: \nRocky Top Student Center \n(collect click-through data, open page in new tab)");
           event.preventDefault();
         });
+
         // 53 undergrad majors LINK
         $("#53-undergrads").click(function(event) {
-          alert("you selected: 53 undergrad majors");
+          alert("you selected: \n53 undergrad majors \n(collect click-through data, open page in new tab)");
           event.preventDefault();
         });
       });
