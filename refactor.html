@@ -95,9 +95,6 @@
       /* update info modal */
       #modal-logo {
         width: 150px;
-        /* position: relative; */
-        /* top: 5px; */
-        /* left: 5px; */
       }
 
       .info-modal-header .close {
@@ -128,7 +125,7 @@
         line-height: 1.2em;
         font-weight: 500;
         color: #397aba;
-        margin: 10px 0;
+        margin: 20px 0;
       }
 
       /* update info section */
@@ -162,6 +159,38 @@
 
       .form-group {
         margin-bottom: 0.2rem;
+      }
+
+      /* hockey tickets modal */
+      .hockey-modal-header .close {
+        color: #fff;
+        background-color: #093550;
+        border-radius: 0px;
+        padding: 19px 21px;
+      }
+
+      .hockey-modal-header {
+        border-radius: 0px;
+        background-image: url("./images/QPattern_1X_Blue.png");
+        color: #fff;
+      }
+
+      .hockey-modal-body {
+        border-radius: 0px;
+        background-image: url("./images/QPattern_1X_White.png");
+        color: #093550;
+      }
+
+      .hockey-modal-body h1 {
+        margin: 10px 0;
+      }
+
+      .hockey-modal-body p {
+        font-size: 1.3rem;
+        line-height: 1.2em;
+        font-weight: 500;
+        color: #093550;
+        margin: 20px 0;
       }
 
       /* free hockey tickets section */
@@ -461,7 +490,7 @@
     </section>
 
     <!-- INFORMATION MODAL -->
-    <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header info-modal-header">
@@ -513,6 +542,27 @@
       </div>
     </section>
 
+    <!-- HOCKEY TICKETS MODAL -->
+    <div class="modal fade" id="hockey-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header hockey-modal-header">
+            <img id="modal-logo" src="./images/QU_logo_secondary_WHITE.svg" alt="Quinnipiac logo" />
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body hockey-modal-body">
+            <h1>Enjoy the game!</h1>
+            <p>
+              Have a great trip and <br />
+              we'll see you soon!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- HOCKEY TICKETS -->
     <section class="hockey-section">
       <div class="split-content">
@@ -520,7 +570,8 @@
         <div class="content hockey-text">
           <h1>Go Bobcats!</h1>
           <p><span id="student-name">xxStudentNamexx</span>, we look forward to seeing you here for <strong>a campus visit and a Quinnipiac Bobcats hockey game!</strong></p>
-          <button id="hockey-button">Get your free tickets!</button>
+
+          <button id="hockey-button" data-toggle="modal" data-target="#hockey-modal">Get your free tickets!</button>
         </div>
         <!--  -->
         <div class="content b hockey-photo"></div>
@@ -557,43 +608,31 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- jQuery dummy alerts for link clicks -->
+    <!-- jQuery dev instructions alerts for footer link clicks -->
     <script>
       // jquery script container
       $(document).ready(function() {
-        // Confirm/Update Info button FPO
-        // $("#info-button").click(function(event) {
-        //   alert("Thanks!\nNow scroll down and get those free hockey tickets!\nSee ya soon!");
-        //   event.preventDefault();
-        // });
-
-        // Get Free Hockey Tickets button FPO
-        $("#hockey-button").click(function(event) {
-          alert("Go Bobcats!\nWe'll see you on the ice!");
-          event.preventDefault();
-        });
-
         // navigating financial aid LINK
         $("#financial-aid").click(function(event) {
-          alert("you selected: Navigating financial aid");
+          alert("you selected: \nNavigating financial aid \n(collect click-through data, open page in new tab)");
           event.preventDefault();
         });
 
         // get involved right away LINK
         $("#get-involved").click(function(event) {
-          alert("you selected: get involved right away");
+          alert("you selected: \nGet involved right away \n(collect click-through data, open page in new tab)");
           event.preventDefault();
         });
 
         // Rocky Top Student Center LINK
         $("#rocky-top").click(function(event) {
-          alert("you selected: Rocky Top Student Center");
+          alert("you selected: \nRocky Top Student Center \n(collect click-through data, open page in new tab)");
           event.preventDefault();
         });
 
         // 53 undergrad majors LINK
         $("#53-undergrads").click(function(event) {
-          alert("you selected: 53 undergrad majors");
+          alert("you selected: \n53 undergrad majors \n(collect click-through data, open page in new tab)");
           event.preventDefault();
         });
       });
