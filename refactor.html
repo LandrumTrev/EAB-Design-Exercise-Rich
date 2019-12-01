@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Welcome to Quinnipiac!</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Cormorant:500|Roboto:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:500|Roboto:300,500,800,900&display=swap" rel="stylesheet" />
     <!-- Bootstrap CDN CSS -->
     <link
       rel="stylesheet"
@@ -142,6 +142,51 @@
         background-size: cover;
         min-height: 280px;
       }
+
+      /* footer (more info) section */
+
+      footer {
+        background: #093550;
+      }
+
+      .footer-headline {
+        font-family: "Cormorant", serif;
+        font-weight: 500;
+        color: #fdc846;
+        margin-bottom: 30px;
+      }
+
+      .footer-copy {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        color: #a9bac6;
+        margin: 20px 5px;
+      }
+
+      .footer-copy a {
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .footer-copy a:link {
+        color: #fff;
+      }
+
+      .footer-copy a:visited {
+        color: #fdc846;
+      }
+
+      .footer-copy a:hover {
+        color: #3b83bd;
+      }
+
+      .footer-copy a:active {
+        color: #83bae8;
+      }
+
+      /* ------------- */
+      /* MEDIA QUERIES */
+      /* ------------- */
 
       /* mobile landscape 568px - 760px */
       @media screen and (min-width: 568px) {
@@ -416,7 +461,7 @@
         <!--  -->
         <div class="content hockey-text">
           <h1>Go Bobcats!</h1>
-          <p><span id="student-name">xxStudentNamexx!</span>, we look forward to seeing you here for <strong>a campus visit and a Quinnipiac Bobcats hockey game!</strong></p>
+          <p><span id="student-name">xxStudentNamexx</span>, we look forward to seeing you here for <strong>a campus visit and a Quinnipiac Bobcats hockey game!</strong></p>
           <button id="hockey-button">Get your free tickets!</button>
         </div>
         <!--  -->
@@ -426,6 +471,16 @@
     </section>
 
     <!-- FOOTER -->
+    <footer class="content">
+      <!--  -->
+      <h1 class="footer-headline">In the meantime, find out more about Quinnipiac:</h1>
+      <!--  -->
+      <p class="footer-copy">You'll have all the help you need <a href="#" id="financial-aid">navigating the financial aid process</a>.</p>
+      <p class="footer-copy">You'll find many ways to <a href="#" id="get-involved">get involved right away</a> during freshman year.</p>
+      <p class="footer-copy"><a href="#" id="rocky-top">The Rocky Top Student Center</a> has something for everyone ... and it's really cool-looking!</p>
+      <p class="footer-copy">With <a href="#" id="53-undergrads">53 undergraduate majors</a> to choose from, you're bound to find your fit.</p>
+      <!--  -->
+    </footer>
 
     <!-- END HTML / START JS -->
 
